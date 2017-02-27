@@ -5,7 +5,7 @@ class <%= class_name %>
   parser.parse(Account.first)
 =end
   
-def self.patterns
+def self.url_patterns
   [//]
 end
 
