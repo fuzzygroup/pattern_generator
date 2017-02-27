@@ -5,6 +5,7 @@ class PoroGenerator < Rails::Generators::NamedBase
   class_option :test_suite, type: :string, default: 'rspec', desc: 'Test framework to generate test. (rspec or minitest)'
 
   def generate_template
+    raise "file_name = #{file_name}"
     template 'poro.rb', "app/models/#{file_name}.rb"
   end
 
