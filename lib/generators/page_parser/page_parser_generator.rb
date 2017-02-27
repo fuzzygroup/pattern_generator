@@ -10,9 +10,9 @@ class PageParserGenerator < Rails::Generators::NamedBase
 
   def generate_test
     if options.test_suite == 'rspec'
-      template 'poro_spec.rb', "spec/models/#{file_name}_spec.rb"
+      template 'page_parser_spec.rb', "spec/models/#{file_name}_spec.rb"
     elsif options.test_suite == 'minitest'
-      template 'poro_test.rb', "test/models/#{file_name}_test.rb"
+      template 'page_parser_test.rb', "test/models/#{file_name}_test.rb"
     end
   end
 
