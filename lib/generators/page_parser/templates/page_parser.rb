@@ -9,7 +9,7 @@ class <%= class_name %>
     [//]
   end
   
-  def self.name
+  def self.account_name
     ""
   end
   
@@ -35,10 +35,10 @@ class <%= class_name %>
 
     return results unless status == :ok
 
-    if return_type == :karma_hash
-    
-      debugger
-    end
+    # if return_type == :karma_hash
+    #
+    #   debugger
+    # end
 
     #results = self.parse_as_html(page, results)
     results = self.parse_as_nokogiri(page, results)
