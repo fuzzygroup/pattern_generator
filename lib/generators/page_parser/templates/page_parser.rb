@@ -91,6 +91,7 @@ class <%= class_name %>
   end
 end
   
+  
 =begin
   data example here
 
