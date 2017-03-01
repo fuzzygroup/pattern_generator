@@ -19,7 +19,7 @@ class <%= class_name %>
     @url = url
   end
 
-  def parse(account, return_type=:karma_hash)
+  def parse(account = nil, return_type=:karma_hash)
     status, page = UrlCommon.get_page(@url)
     results = {}
 
