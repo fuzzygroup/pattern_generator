@@ -8,11 +8,21 @@ class <%= class_name %>
   def self.url_patterns
     [//]
   end
+  
+  def self.name
+    ""
+  end
+  
+  def self.account_type
+    ""
+  end
 
-  def self.page_url_patterns
-    #https://www.pluralsight.com/courses/django-angularjs-web-development
-    #https://www.meetup.com/indyjs/
-    [/https?:\/\/www\./]
+  def self.description
+    ""
+  end
+  
+  def self.font_awesome_icon
+    ""
   end
 
   def initialize(url)
