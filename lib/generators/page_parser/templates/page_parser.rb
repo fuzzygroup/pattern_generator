@@ -21,6 +21,10 @@ class <%= class_name %>
     ""
   end
   
+  def self.category
+    ""
+  end
+  
   def self.font_awesome_icon
     ""
   end
