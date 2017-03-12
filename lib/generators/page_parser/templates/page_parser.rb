@@ -25,6 +25,10 @@ class <%= class_name %>
     ""
   end
   
+  def self.available?
+    true
+  end
+  
   def self.font_awesome_icon
     ""
   end
