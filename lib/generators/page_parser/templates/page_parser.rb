@@ -35,7 +35,7 @@ class <%= class_name %>
 
   def parse(account = nil, return_type=:karma_hash)
     status, page = UrlCommon.get_page(@url)
-    results = {}
+    results = MetricCommon.make_results_hash
 
     return results unless status == :ok
 
