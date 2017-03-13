@@ -9,6 +9,16 @@ class <%= class_name %>
     [//]
   end
   
+  def self.test_url
+    self.test_urls.first
+  end
+  
+  def self.test_urls
+    [
+      "http://stackexchange.com/users/177957/fuzzygroup"
+    ]
+  end
+  
   def self.account_name
     ""
   end
