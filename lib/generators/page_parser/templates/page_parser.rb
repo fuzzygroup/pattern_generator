@@ -72,7 +72,7 @@ class <%= class_name %>
       rating = rating[1] 
     end
 
-    results[:itunes_podcast__rating] = MetricCommon.make_metric_array(rating, "rating")
+    results["itunes_podcast__rating"] = MetricCommon.make_metric_array(rating, "rating")
     return results
   end
 
@@ -100,10 +100,10 @@ class <%= class_name %>
     #
     # reader_count = spans[0].text.gsub(/,/,'') if spans[0]
 
-    results[:meetup__member_count] = MetricCommon.make_metric_array(member_count, "count")
-    results[:meetup__reviews] = MetricCommon.make_metric_array(reviews, "count")
-    results[:meetup__past_meetups] = MetricCommon.make_metric_array(past_meetups, "count")
-    results[:meetup__upcoming_meetups] = MetricCommon.make_metric_array(upcoming_meetups, "count")
+    results["meetup__member_count"] = MetricCommon.make_metric_array(member_count, "count")
+    results["meetup__reviews"] = MetricCommon.make_metric_array(reviews, "count")
+    results["meetup__past_meetups"] = MetricCommon.make_metric_array(past_meetups, "count")
+    results["meetup__upcoming_meetups"] = MetricCommon.make_metric_array(upcoming_meetups, "count")
 
     return results
   end
