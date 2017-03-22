@@ -3,6 +3,8 @@ class <%= class_name %>
 =begin
   parser = <%= class_name %>.new("https://")
   parser.parse(Account.first)
+  
+  results = <%= class_name %>.parse("https://")
 =end
   
   def self.url_patterns
@@ -47,7 +49,8 @@ class <%= class_name %>
     @url = url
   end
 
-  def parse(account = nil, return_type=:karma_hash)
+  def self.parse(url, return_type=:karma_hash)
+    @url = url
     status, page = UrlCommon.get_page(@url)
     results = MetricCommon.make_results_hash
 
@@ -63,8 +66,12 @@ class <%= class_name %>
 
     return results
   end
+  
+  class <<self  
+    alias_method :fetch, :parse
+  end  
 
-  def parse_as_html(page, results)
+  def self.parse_as_html(page, results)
     stripped_body = TextCommon.strip_breaks(page.body)
 
     rating = /itemprop="ratingValue">([0-9\.]+)</.match(stripped_body)
@@ -76,7 +83,7 @@ class <%= class_name %>
     return results
   end
 
-  def parse_as_nokogiri(page, results)
+  def self.parse_as_nokogiri(page, results)
   
     raw_data = page.parser.css('li.line').css('a.block').text
 
