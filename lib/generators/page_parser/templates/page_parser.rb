@@ -1,4 +1,4 @@
-class <%= class_name %>
+class <%= class_name %> < PageParserBase
   
 =begin
   parser = <%= class_name %>.new("https://")
