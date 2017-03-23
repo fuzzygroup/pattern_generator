@@ -49,29 +49,30 @@ class <%= class_name %> < PageParserBase
     @url = url
   end
 
-  def self.parse(url, return_type=:karma_hash)
-    @url = url
-    status, page = UrlCommon.get_page(@url)
-    results = MetricCommon.make_results_hash
-
-    return results unless status == :ok
-
-    # if return_type == :karma_hash
-    #
-    #   debugger
-    # end
-
-    #results = self.parse_as_html(page, results)
-    results = self.parse_as_nokogiri(page, results)
-
-    return results
-  end
-  
-  class <<self  
-    alias_method :fetch, :parse
-  end  
+  # def self.parse(url, return_type=:karma_hash)
+  #   @url = url
+  #   status, page = UrlCommon.get_page(@url)
+  #   results = MetricCommon.make_results_hash
+  #
+  #   return results unless status == :ok
+  #
+  #   # if return_type == :karma_hash
+  #   #
+  #   #   debugger
+  #   # end
+  #
+  #   #results = self.parse_as_html(page, results)
+  #   results = self.parse_as_nokogiri(page, results)
+  #
+  #   return results
+  # end
+  #
+  # class <<self
+  #   alias_method :fetch, :parse
+  # end
 
   def self.parse_as_html(page, results)
+    return results
     stripped_body = TextCommon.strip_breaks(page.body)
 
     rating = /itemprop="ratingValue">([0-9\.]+)</.match(stripped_body)
