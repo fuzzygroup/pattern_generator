@@ -108,10 +108,10 @@ class <%= class_name %> < ParserPageBase
     #
     # reader_count = spans[0].text.gsub(/,/,'') if spans[0]
 
-    results["meetup__member_count"] = MetricCommon.make_metric_array(member_count, "count")
-    results["meetup__reviews"] = MetricCommon.make_metric_array(reviews, "count")
-    results["meetup__past_meetups"] = MetricCommon.make_metric_array(past_meetups, "count")
-    results["meetup__upcoming_meetups"] = MetricCommon.make_metric_array(upcoming_meetups, "count")
+    results["metrics"]["meetup__member_count"] = MetricCommon.make_metric_array(member_count, "count")
+    results["metrics"]["meetup__reviews"] = MetricCommon.make_metric_array(reviews, "count")
+    results["metrics"]["meetup__past_meetups"] = MetricCommon.make_metric_array(past_meetups, "count")
+    results["metrics"]["meetup__upcoming_meetups"] = MetricCommon.make_metric_array(upcoming_meetups, "count")
 
     return results
   end
